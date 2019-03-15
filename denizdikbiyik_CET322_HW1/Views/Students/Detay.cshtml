@@ -1,0 +1,63 @@
+﻿@model Student
+@{
+    <h2> Düzenle </h2>
+    <form asp-controller="Students" asp-action="Detay" method="post">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(x => x.Id)
+        <div class="editor-field">
+            Adınız:
+            <br />
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            Soyadınız:
+            <br />
+            @Html.EditorFor(model => model.Surname)
+            @Html.ValidationMessageFor(model => model.Surname)
+        </div>
+        <div class="editor-field">
+            Öğrenci Numaranız:
+            <br />
+            @Html.EditorFor(model => model.StudentNo)
+            @Html.ValidationMessageFor(model => model.StudentNo)
+        </div>
+        <div class="editor-field">
+            Mail Adresiniz:
+            <br />
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            Telefon Numaranız:
+            <br />
+            @Html.EditorFor(model => model.TelNo)
+            @Html.ValidationMessageFor(model => model.TelNo)
+        </div>
+        <br />
+        <button type="submit" class="btn btn-dark">Kaydet</button>
+    </form>
+    <br />
+    <br />
+    ViewData["Title"] = "Öğrenci Detayları";
+}
+<h3>Öğrenci Detayları</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-4"> Öğrenci Adı-Soyadı</div>
+        <div class="col-4"> @Model.Name @Model.Surname</div>
+    </div>
+    <div class="row">
+        <div class="col-4"> Okul Numarası </div>
+        <div class="col-4"> @Model.StudentNo </div>
+    </div>
+    <div class="row">
+        <div class="col-4"> Mail Adresi </div>
+        <div class="col-4"> @Model.Email </div>
+    </div>
+    <div class="row">
+        <div class="col-4"> Telefon Numarası </div>
+        <div class="col-4"> @Model.TelNo </div>
+    </div>
+</div>
+    

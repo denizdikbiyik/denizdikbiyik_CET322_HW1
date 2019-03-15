@@ -1,0 +1,47 @@
+﻿@model Student
+@{
+    <h2> Öğrenci Ekle </h2>
+    <form asp-controller="Students" asp-action="AddPost" method="post">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(x => x.Id)
+        <div class="editor-field">
+            Adınız:
+            <br />
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            Soyadınız:
+            <br />
+            @Html.EditorFor(model => model.Surname)
+            @Html.ValidationMessageFor(model => model.Surname)
+        </div>
+        <div class="editor-field">
+            Öğrenci Numaranız:
+            <br />
+            @Html.EditorFor(model => model.StudentNo)
+            @Html.ValidationMessageFor(model => model.StudentNo)
+        </div>
+        <div class="editor-field">
+            Mail Adresiniz:
+            <br />
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            Telefon Numaranız:
+            <br />
+            @Html.EditorFor(model => model.TelNo)
+            @Html.ValidationMessageFor(model => model.TelNo)
+        </div>
+        <br />
+        <button type="submit" class="btn btn-dark">Ekle</button>
+    </form>
+    <br />
+    <br />
+    ViewData["Title"] = "Öğrenci Ekle";
+}
+<h4>Eklenen öğrenciyi CET Bölümü Öğrencileri sayfasından kontrol edebilirsiniz.</h4>
+
+
+
